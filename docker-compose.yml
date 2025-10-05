@@ -1,0 +1,36 @@
+services:
+  clickhouse:
+    container_name: clickhouse
+    hostname: clickhouse
+    image: clickhouse/clickhouse-server:latest
+    networks: ['shared_network']
+    restart: always
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+      - "9004:9004"
+      - "9005:9005"
+    environment:
+      - CLICKHOUSE_DB=${CLICKHOUSE_DB}
+      - CLICKHOUSE_USER=${CLICKHOUSE_USER}
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PWD}
+    volumes:
+      - ./data/clickhouse:/var/lib/clickhouse/
+      - ./clickhouse/mysql.xml:/etc/clickhouse-server/config.d/mysql.xml
+      - ./clickhouse/postgres.xml:/etc/clickhouse-server/config.d/postgres.xml
+      - ./clickhouse/disable-telemetry.xml:/etc/clickhouse-server/config.d/disable-telemetry.xml
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query=SELECT 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+networks:
+  shared_network:
+    name: shared_network
+    driver: bridge
+    external: true
