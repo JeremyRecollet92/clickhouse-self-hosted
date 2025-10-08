@@ -1,5 +1,7 @@
 # ClickHouse Self-Hosted with Docker
 
+![clickhouse-self-hosted](https://repository-images.githubusercontent.com/1070269030/ffde7611-0bfd-459a-8268-2ce6e07661b3)
+
 This repository provides a `docker compose` setup for running a self-hosted [ClickHouse](https://clickhouse.com/) server.
 
 It is pre-configured to join a shared Docker network, which simplifies connecting to other services like [n8n](https://github.com/AiratTop/n8n-self-hosted).
