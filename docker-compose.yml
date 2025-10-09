@@ -16,9 +16,9 @@ services:
       CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PWD}
     volumes:
       - ./data/clickhouse:/var/lib/clickhouse/
-      - ./clickhouse/mysql.xml:/etc/clickhouse-server/config.d/mysql.xml
-      - ./clickhouse/postgres.xml:/etc/clickhouse-server/config.d/postgres.xml
-      - ./clickhouse/disable-telemetry.xml:/etc/clickhouse-server/config.d/disable-telemetry.xml
+      - ./clickhouse/mysql.xml:/etc/clickhouse-server/config.d/mysql.xml:ro
+      - ./clickhouse/postgres.xml:/etc/clickhouse-server/config.d/postgres.xml:ro
+      - ./clickhouse/disable-telemetry.xml:/etc/clickhouse-server/config.d/disable-telemetry.xml:ro
     healthcheck:
       test: ["CMD", "clickhouse-client", "--query=SELECT 1"]
       interval: 10s
