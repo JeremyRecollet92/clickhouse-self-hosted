@@ -11,9 +11,9 @@ services:
       - "9004:9004"
       - "9005:9005"
     environment:
-      - CLICKHOUSE_DB=${CLICKHOUSE_DB}
-      - CLICKHOUSE_USER=${CLICKHOUSE_USER}
-      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PWD}
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PWD}
     volumes:
       - ./data/clickhouse:/var/lib/clickhouse/
       - ./clickhouse/mysql.xml:/etc/clickhouse-server/config.d/mysql.xml
