@@ -1,3 +1,4 @@
+name: clickhouse
 services:
   clickhouse:
     container_name: clickhouse
