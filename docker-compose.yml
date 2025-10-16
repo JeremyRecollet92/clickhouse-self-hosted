@@ -15,6 +15,7 @@ services:
       CLICKHOUSE_DB: ${CLICKHOUSE_DB}
       CLICKHOUSE_USER: ${CLICKHOUSE_USER}
       CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PWD}
+      CLICKHOUSE_LOG_LEVEL: WARNING
     volumes:
       - ./data/clickhouse:/var/lib/clickhouse/
       - ./clickhouse/mysql.xml:/etc/clickhouse-server/config.d/mysql.xml:ro
