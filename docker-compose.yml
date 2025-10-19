@@ -4,7 +4,8 @@ services:
     container_name: clickhouse
     hostname: clickhouse
     image: clickhouse/clickhouse-server:latest
-    networks: ['shared_network']
+    networks:
+      - shared_network
     restart: always
     ports:
       - "8123:8123"
